@@ -22,12 +22,7 @@ public class TodoReadController extends HttpServlet {
         log.info("/todo/read 실행");
         try{
             Long tno = Long.parseLong(req.getParameter("tno"));
-
-            log.info("tno번호 : {} ", tno.toString());
-
             TodoDTO dto = todoService.get(tno);
-            log.info(dto.toString());
-
             req.setAttribute("dto", dto);
             req.getRequestDispatcher("/todo/read.jsp").forward(req, res);
 

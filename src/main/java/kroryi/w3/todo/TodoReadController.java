@@ -12,7 +12,7 @@ import lombok.extern.log4j.Log4j2;
 import java.io.IOException;
 
 @Log4j2
-@WebServlet(name="todoReadController", urlPatterns = "/todo/read")
+//@WebServlet(name="todoReadController", urlPatterns = "/todo/read")
 public class TodoReadController extends HttpServlet {
 
     private TodoService todoService = TodoService.INSTANCE;

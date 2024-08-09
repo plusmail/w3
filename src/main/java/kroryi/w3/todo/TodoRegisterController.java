@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import kroryi.w3.todo.dto.TodoDTO;
 import lombok.extern.log4j.Log4j2;
 
@@ -24,6 +25,14 @@ public class TodoRegisterController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
         log.info("할일 입력 화면 실행");
+
+        HttpSession session = req.getSession();
+        if(session.isNew()){
+            log.info("세션을 발급 받아야 한다.");
+            res.sendRedirect("/login");
+            return;
+        }
+
         req.getRequestDispatcher("/todo/register.jsp").forward(req, res);
 
     }

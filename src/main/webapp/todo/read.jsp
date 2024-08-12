@@ -73,6 +73,7 @@
 </style>
 <body>
 <h1>Todo Read</h1>
+<h2>${appName}</h2>
 
 ${dto.tno}<br>
 ${dto.title}<br>

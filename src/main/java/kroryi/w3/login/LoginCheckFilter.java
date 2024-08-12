@@ -28,8 +28,9 @@ public class LoginCheckFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
         HttpSession session = request.getSession();
-        if(session.getAttribute("loginInfo") == null){
-            response.sendRedirect("/login");
+
+        if(session.getAttribute("loginInfo") != null){
+            chain.doFilter(req, res);
             return;
         }
 

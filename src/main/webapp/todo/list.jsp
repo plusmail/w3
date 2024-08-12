@@ -23,7 +23,6 @@
 <form method="post" action="/logout">
     <button type="submit">로그아웃</button>
 </form>
-
 <div class="todolist">
     <ul>
         <c:forEach var="dto" items="${dtoList}">

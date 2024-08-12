@@ -12,10 +12,19 @@
 </c:if>
 
 <form action="/login" method="post">
-    <input type="text" name="id"><br>
-    <input type="password" name="password">
-    <button type="reset">리셋</button>
-    <button type="submit">로그인</button>
+    <label for="id">
+        아이디 :<input type="text" name="id"><br>
+    </label>
+    <label for="password">
+        비밀번호 : <input type="password" name="password">
+    </label>
+    <label>
+        자동 로그인 : <input type="checkbox" name="auto">
+    </label>
+    <div>
+        <button type="reset">리셋</button>
+        <button type="submit">로그인</button>
+    </div>
 </form>
 </body>
 </html>
